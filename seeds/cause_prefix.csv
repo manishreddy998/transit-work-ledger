@@ -1,0 +1,6 @@
+prefix,cause_group,reason
+E,vehicle_equipment,TTC code convention: E codes are equipment faults on the vehicle
+T,operations,T codes are transportation (operating) issues
+P,infrastructure,"P codes are plant: track, power, signals, buildings"
+S,security,S codes are security and police
+M,other_external,"M codes are miscellaneous: customers, weather, events, staffing"

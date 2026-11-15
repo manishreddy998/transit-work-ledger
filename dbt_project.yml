@@ -1,0 +1,22 @@
+name: transit_work_ledger
+version: "1.0.0"
+config-version: 2
+profile: transit_work_ledger
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+target-path: "target"
+vars:
+  extreme_delay_minutes: 300     # single events longer than this are kept but flagged for review
+  repeat_fault_days: 30          # an equipment fault on the same vehicle within this many days counts as a repeat
+models:
+  transit_work_ledger:
+    +persist_docs: {relation: true, columns: true}
+    staging: {+schema: staging, +materialized: table}
+    intermediate: {+schema: intermediate, +materialized: table}
+    marts: {+schema: marts, +materialized: table}
+    reports: {+schema: reports, +materialized: table}
+seeds:
+  transit_work_ledger:
+    +schema: rules

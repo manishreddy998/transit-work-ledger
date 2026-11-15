@@ -1,0 +1,15 @@
+cause_group,counts_as_lost_time,within_ttc_control,reason
+vehicle_equipment,true,true,The vehicle itself failed
+staffing,true,true,No operator or crew available
+operations,true,true,Operating issues such as late pull-outs and switch problems
+infrastructure,true,true,Track power signals and buildings
+onboard_systems,true,true,On-board tracking and communications
+customers,true,false,Something a customer did or needed
+collision,true,false,Collisions and injuries including ones the TTC was not involved in
+traffic_congestion,true,false,Traffic and congestion
+weather,true,false,Weather and force majeure
+security,true,false,Police and security matters
+other_external,true,false,Miscellaneous codes with no clearer cause
+unknown,true,false,Code missing from every code list (e.g. XXXXX)
+diversion,false,false,Logged minutes measure how long a detour lasted. Counting them as delay would overstate lost time 5x
+redeployed,false,false,The vehicle was moved to run a shuttle. The service moved and was not lost

@@ -1,0 +1,9 @@
+line_text,reason
+999,"placeholder number used in the bus log, not a public route"
+600,"run-as-directed and special service number, not in the public timetable"
+555,"special service number, not in the public timetable"
+899,"special service number, not in the public timetable"
+RAD,"run as directed, not a scheduled route"
+TRAINING BUS,"training vehicle, no public service lost"
+SHUTTLE BUS,shuttle without a named line
+SRT,"Line 3 Scarborough RT, closed in 2023 and not in the current timetable"

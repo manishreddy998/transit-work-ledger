@@ -1,0 +1,4 @@
+dbt-core==1.12.7
+dbt-duckdb==1.9.6
+duckdb==2.0.0
+anthropic==2.8.0

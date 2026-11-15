@@ -1,0 +1,15 @@
+version: 2
+seeds:
+  - name: cause_prefix
+    description: "Default cause group from the first letter of a TTC delay code. Used when no description rule applies, including codes missing from the published code list."
+  - name: cause_rules
+    description: "Description patterns that override the prefix (e.g. a no-operator code is staffing, not 'miscellaneous'). Lowest priority number wins."
+  - name: subway_lines
+    description: "Subway log line codes to timetable route numbers."
+    config: {column_types: {line_code: varchar, route_short_name: varchar}}
+  - name: not_public_routes
+    description: "Line values in the logs that are not public routes. Events on them keep no route instead of a guessed one."
+    config: {column_types: {line_text: varchar}}
+  - name: cause_groups
+    description: "Whether each cause group counts as lost time, and whether it is within the TTC's control. Written down so the headline number can be argued with."
+    config: {column_types: {counts_as_lost_time: boolean, within_ttc_control: boolean}}

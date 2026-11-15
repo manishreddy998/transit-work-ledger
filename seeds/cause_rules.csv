@@ -1,0 +1,11 @@
+pattern,cause_group,priority,reason
+NO OPERATOR|CREW AVAIL|NO COLLECTOR|ILL OPERATOR,staffing,1,Service lost because no operator or crew was available
+WEATHER|FORCE MAJEURE|SNOW|ICE,weather,2,Weather or major external event
+CUSTOMER|PATRON|PASSENGER RELATED|UNSANITARY|FARE DISPUTE|DISORDERLY,customers,3,Caused by or for a customer on board
+COLLISION|PERSONAL INJURY,collision,4,Collision or injury
+POLICE|ASSAULT|BOMB|SUSPICIOUS|SECURITY,security,5,Security or police matter
+DIVERSION,diversion,6,"Vehicle running on a detour. These events log long durations, so they are reported apart from delays"
+SHUTTLE,redeployed,7,"Vehicle pulled from its route to run a shuttle. Service moved, not lost on the vehicle"
+MAINTAIN SCHED|CONGES|TRAPPED VEHICLE|AUTO FOUL,traffic_congestion,8,"Traffic, congestion or a blocked vehicle"
+VISION,onboard_systems,9,VISION is the TTC on-board tracking and communications system
+PAA,customers,10,Passenger assistance alarm

@@ -1,0 +1,10 @@
+version: 2
+sources:
+  - name: raw_delays
+    description: "TTC delay logs since Jan 2025 from Toronto Open Data, one file per mode, plus each mode's code list."
+    tables: [{name: bus}, {name: streetcar}, {name: subway}, {name: bus_codes}, {name: streetcar_codes}, {name: subway_codes}]
+  - name: raw_gtfs
+    description: "TTC GTFS schedule published Nov 5, 2026 (service Nov 1 to Dec 21, 2026)."
+    tables: [{name: routes}, {name: trips}, {name: stop_times}, {name: calendar}, {name: stops}]
+  - name: raw_meta
+    tables: [{name: source_files}]

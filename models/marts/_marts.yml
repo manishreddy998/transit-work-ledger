@@ -1,0 +1,26 @@
+version: 2
+models:
+  - name: fct_delay_event
+    description: "One row per delay event across bus, streetcar and subway, exact repeats removed. Every route and cause carries the rule that set it."
+    columns:
+      - name: event_id
+        data_tests: [unique, not_null]
+      - name: route_id
+        description: "Empty when the logged line could not be placed on a timetable route. Never guessed."
+        data_tests: [{relationships: {arguments: {to: ref('dim_route'), field: route_id}}}]
+      - name: vehicle_number
+        description: "Empty when the log has 0 or nothing. There is no vehicle 0."
+      - name: lost_minutes
+        description: "Minutes counted as lost service. Zero for diversions and shuttle redeployments (see rules.cause_groups)."
+  - name: dim_route
+    columns:
+      - name: route_id
+        data_tests: [unique, not_null]
+  - name: fct_route_day
+    description: "Planned vehicle-hours (current timetable, by day type) and minutes lost, per route per day."
+    data_tests:
+      - unique_combination: {arguments: {columns: [route_id, service_date]}}
+  - name: fct_vehicle
+    description: "One row per vehicle seen in the logs, with equipment faults and repeat faults."
+    data_tests:
+      - unique_combination: {arguments: {columns: [mode, vehicle_number]}}

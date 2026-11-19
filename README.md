@@ -45,7 +45,7 @@ Every number above comes out of the SQL in `models/` and can be traced to the ro
 
 ## The AI layer
 
-`scripts/ask.py` answers plain-English questions with Claude (`claude-opus-5-5`), but the model never writes SQL. It can only call six fixed, parameterized, read-only tools: `lost_time_by_route`, `causes_for_route`, `vehicle_history`, `repeat_fault_vehicles`, `data_quality` and `counting_rules`. After it answers, every number in the answer is checked against the numbers the tools returned. A figure no tool produced is printed under `UNVERIFIED` instead of passing as fact. `python scripts/ask.py --tools-only` runs every tool without calling the model.
+`scripts/ask.py` answers plain-English questions with Claude (`claude-opus-5-5`), but the model never writes SQL. It can only call six fixed, parameterized, read-only tools: `lost_time_by_route`, `causes_for_route`, `vehicle_history`, `repeat_fault_vehicles`, `data_quality` and `counting_rules`. After it answers, every number in the answer is checked against the numbers the tools returned. A figure no tool produced is printed under `UNVERIFIED` instead of passing as fact. `python scripts/ask.py --tools-only` runs every tool without calling the model. The number check grew into its own library, [number-receipts](https://github.com/manishreddy998/number-receipts), which also catches real numbers attached to the wrong route or field.
 
 ## Tests
 
